@@ -1,0 +1,14 @@
+version: '2'
+services:
+  site:
+    command: jekyll serve --source ./project --dest ./project/web
+    image: jekyll/jekyll:latest
+    container_name: jekyll_project
+    volumes:
+      - .:/srv/jekyll
+    ports:
+      - 4000:4000
+      - 35729:35729
+      - 3000:3000
+      -   80:4000
+
